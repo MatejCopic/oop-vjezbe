@@ -19,10 +19,13 @@ void funk(std::vector<string> &vek_str) {
 	int n,x;
 	std::cout << "Koliko stringova zelite unjeti: " << std::endl;
 	std::cin >> n;
-	n = n * n;
-	for (int i = 0; i < n; ++i) {
-		std::cout << "Unesite " << i + 1 << ". string" << std::endl;
-		std::cin >> vek_str[i];
+	for (int j = 0;;) {
+		for (std::string i = vek_str.begin(); i < vek_str.end(); ++i) {
+			std::cout << "Unesite " << i + 1 << ". string" << std::endl;
+			std::cin >> vek_str[j];
+			j++;
+		}
+		break;
 	}
 
 	for (int j = 0; j < n; j++) {
