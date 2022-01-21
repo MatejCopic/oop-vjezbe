@@ -1,7 +1,7 @@
 #include <iostream>
-#include "vj_8_header.hpp"
 #include <vector>
 #include <algorithm>
+#include "vj_8_header.hpp"
 
 int main() {
 
@@ -9,8 +9,9 @@ int main() {
 
 	// prosjecno vrijeme
 	timer avg;
-	for (auto t : v)
+	for (auto t : v) {
 		avg += t;
+	}
 
 	avg /= v.size();
 	std::cout << "avg " << avg << std::endl;
