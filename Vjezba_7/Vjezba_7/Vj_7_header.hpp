@@ -1,25 +1,25 @@
+#include <iostream>
 using namespace std;
 
 class Board
 {
-	char** board;
-	double coll;
-	double row;
+private:
 	char ch;
+	char** board;
+	double row;
+	double coll;
 
 public:
 	friend struct Point;
 	Board(double r, double c, char ch) { this->row = r, this->coll = c, this->ch = ch; }
 	void Matrix();
-	void draw_char(const struct Point&, char chh);
-	void draw_up_line(const struct Point&, char chh);
-	void draw_line(const struct Point&, const struct Point&, char chh);
-
-	Board() { this->row = 10; this->coll = 20; }
+	void draw_line(const struct Point&, const struct Point&, char ch_znak);
+	void draw_up_line(const struct Point&, char ch_znak);
+	void draw_char(const struct Point&, char ch_znak);
+	void display();
 	Board(Board& b);
 	Board(Board&& b);
 	~Board();
-	void display();
 
 };
 
@@ -27,5 +27,5 @@ struct Point
 {
 	double x;
 	double y;
-	static Point point(Board&);
+	static Point point(Board& b);
 };
